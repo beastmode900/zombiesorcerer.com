@@ -1,0 +1,105 @@
+/* # for id , . for class */
+
+:root{
+    --char-height: 50vmin;
+    --char-width: 30vmin;
+    --char-posl: 36vmin;
+    --char-post: 14vmin;
+    --map-height: 3vmin;
+    --map-width: 24vmin;
+    --map-background-color: black;
+    --map-font-size: 2.5vmin;
+}
+
+body {
+    margin: auto;
+    max-width: 100vh;
+    cursor: zoom-in;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#bg-container{
+    border-style: ridge;
+    border-width: 7px;
+    transition: opacity 0.5s;
+    opacity: 1;
+    background-size: cover;
+    position: relative;
+    top: 10px;
+    height: 100%;
+    object-fit: fill;
+    width: 100%;
+    background-position: center center;
+}
+
+#flex-container{
+    height: 90vmin;
+    width: 90vmin;
+    object-fit: fill;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.hoverUp{
+    position: relative;
+    display: flex;
+    height: 15vmin;
+    width: 44vmin;
+    bottom: 100vmin;
+    left: 25vmin;
+    rotate: 0deg;
+    transform: skew(0deg, 0deg);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+/* hover CSS is always the same so we should make a js function to avoid copy and pasting over and over */
+.hoverUp:hover{
+    box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
+    -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+}
+
+.hoverRight{
+    position: relative;
+    display: flex;
+    height: 44vmin;
+    width: 15vmin;
+    bottom: 90vmin;
+    left: 75.8vmin;
+    rotate: 0deg;
+    transform: skew(0deg, 0deg);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.hoverRight:hover{
+    box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
+    -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+}
+
+.hoverLeft{
+    position: relative;
+    display: flex;
+    height: 44vmin;
+    width: 15vmin;
+    bottom: 138vmin;
+    rotate: 0deg;
+    transform: skew(0deg, 0deg);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.hoverLeft:hover{
+    box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
+    -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+}
