@@ -1,4 +1,4 @@
-/* # for id , . for class */
+/* # for id , . for class , nothing for html element */
 
 :root{
     --char-height: 50vmin;
@@ -48,31 +48,32 @@ body {
     cursor: pointer;
 }
 
-.hoverUp{
+.toUp{
     position: relative;
     display: flex;
     height: 15vmin;
     width: 44vmin;
-    bottom: 100vmin;
+    bottom: 88vmin;
     left: 25vmin;
     rotate: 0deg;
     transform: skew(0deg, 0deg);
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
 }
-/* hover CSS is always the same so we should make a js function to avoid copy and pasting over and over */
-.hoverUp:hover{
+/* hover CSS is always the same so we should make a js function to avoid copy and pasting over and over
+   actually sometimes they change the dimensions of the box shadow so mayyyyybe not */
+.toUp:hover{
     box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
     -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
     -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
 }
 
-.hoverRight{
+.toRight{
     position: relative;
     display: flex;
     height: 44vmin;
     width: 15vmin;
-    bottom: 90vmin;
+    bottom: 23vmin;
     left: 75.8vmin;
     rotate: 0deg;
     transform: skew(0deg, 0deg);
@@ -80,25 +81,44 @@ body {
     border-radius: 10px 10px 10px 10px;
 }
 
-.hoverRight:hover{
+.toRight:hover{
     box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
     -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
     -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
 }
 
-.hoverLeft{
+.toLeft{
     position: relative;
     display: flex;
     height: 44vmin;
     width: 15vmin;
-    bottom: 138vmin;
+    top: 23vmin;
     rotate: 0deg;
     transform: skew(0deg, 0deg);
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
 }
 
-.hoverLeft:hover{
+.toLeft:hover{
+    box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
+    -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
+}
+
+.toHome{
+    position: relative;
+    display: flex;
+    height: 30vmin;
+    width: 30vmin;
+    top: 30vmin;
+    left: 30vmin;
+    rotate: 0deg;
+    transform: skew(0deg, 0deg);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.toHome:hover{
     box-shadow: 2px 2px 52px 0 rgba(255, 255, 255, 0.75), 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset;
     -webkit-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
     -moz-box-shadow: 2px 2px 26px 10px rgba(255, 255, 255, 0.25) inset, 2px 2px 52px 0 rgba(255, 255, 255, 0.75);
