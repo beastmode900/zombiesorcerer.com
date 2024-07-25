@@ -25,21 +25,29 @@ const locations = {
         toLeft: 1,
         toRight: 1,
         toUp: 1,
+        previous: "",
         background: 'url("./assets/images/treepicEdit.png")'
     },
 
     up: {
+        toLeft: 1,
+        toRight: 1,
         toHome: 1,
+        previous: "",
         background: 'url("./assets/images/IMG_2344.JPG")'
     },
 
     left: {
         toHome: 1,
+        toUp: 1,
+        previous: "",
         background: 'url("./assets/images/IMG_2374.JPG")'
     },
 
     right: {
         toHome: 1,
+        toUp: 1,
+        previous: "",
         background: 'url("./assets/images/IMG_2375.JPG")'
     },
 }
@@ -50,8 +58,10 @@ let currentLocation = "home";
 let previousLocation = "home";
 
 function moveLocation(newLocation){
-    previousLocation = currentLocation; //store last location for back button
+    // previousLocation = currentLocation; //store last location for back button
+    locations[newLocation].previous = currentLocation;
     currentLocation = newLocation; //set currentLocation to where we want to move
+ 
     const locationDivs = locations[currentLocation];
     const locationHTML = Object.keys(locationDivs)
     .filter((div) => locationDivs[div] === 1)
@@ -65,3 +75,24 @@ function moveLocation(newLocation){
 
 }
     moveLocation(currentLocation); //call once to start on home
+
+
+    function moveLocationWithBack(newLocation){
+        // previousLocation = currentLocation; //store last location for back button
+        if(newLocation === currentLocation){
+            return;
+        }
+        currentLocation = newLocation; //set currentLocation to where we want to move
+     
+        const locationDivs = locations[currentLocation];
+        const locationHTML = Object.keys(locationDivs)
+        .filter((div) => locationDivs[div] === 1)
+        .map((div) => clickables[div])
+        .join("");
+    
+        container.innerHTML = locationHTML;
+        container.style.backgroundImage = locationDivs["background"];
+    
+    
+    
+    }
