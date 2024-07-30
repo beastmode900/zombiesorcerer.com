@@ -44,6 +44,13 @@ body {
     align-items: center;
 }
 
+#toggleMap{
+    position: relative;
+    top: 0vmin;
+    right: 0vmin;
+}
+
+
 .clickable{
     cursor: pointer;
 }

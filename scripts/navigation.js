@@ -6,7 +6,7 @@ const bodyElement = document.body;
 
 
 //clickable elements HTML
-const clickables = {  //use ` (not ') for these because the divs have double quotes and single quotes inside them
+const clickables = {  //use ` (not ') for these because some divs have double quotes and single quotes inside them
     toLeft: `<div class="toLeft clickable" onclick="moveLocation('left')"></div>`,
     toUp: `<div class="toUp clickable" onclick="moveLocation('up')"></div>`,
     toRight: `<div class="toRight clickable" onclick="moveLocation('right')"></div>`,
@@ -26,7 +26,8 @@ const locations = {
         toRight: 1,
         toUp: 1,
         previous: "",
-        background: 'url("./assets/images/treepicEdit.png")'
+        background: 'url("./assets/images/treepicEdit.png")',
+        mapVer: 'url("./assets/images/IMG_2344.JPG")',
     },
 
     up: {
@@ -34,21 +35,24 @@ const locations = {
         toRight: 1,
         toHome: 1,
         previous: "",
-        background: 'url("./assets/images/IMG_2344.JPG")'
+        background: 'url("./assets/images/IMG_2344.JPG")',
+        mapVer: 'url("./assets/images/treepicEdit.png")',
     },
 
     left: {
         toHome: 1,
         toUp: 1,
         previous: "",
-        background: 'url("./assets/images/IMG_2374.JPG")'
+        background: 'url("./assets/images/IMG_2374.JPG")',
+        mapVer: 'url("./assets/images/IMG_2375.JPG")',
     },
 
     right: {
         toHome: 1,
         toUp: 1,
         previous: "",
-        background: 'url("./assets/images/IMG_2375.JPG")'
+        background: 'url("./assets/images/IMG_2375.JPG")',
+        mapVer: 'url("./assets/images/IMG_2374.JPG")',
     },
 }
 
@@ -96,3 +100,16 @@ function moveLocation(newLocation){
     
     
     }
+
+
+let toggleMap = document.getElementById("toggleMap");
+toggleMap.onclick = function() {
+    const locationDivs = locations[currentLocation];
+    if(container.style.backgroundImage === locationDivs["background"]){
+        container.style.backgroundImage = locationDivs["mapVer"];
+    }else{
+        container.style.backgroundImage = locationDivs["background"];
+    }
+}
+
+
