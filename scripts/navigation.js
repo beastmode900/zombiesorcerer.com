@@ -5,6 +5,7 @@ const bodyElement = document.body;
 
 
 
+
 //clickable elements HTML
 const clickables = {  //use ` (not ') for these because some divs have double quotes and single quotes inside them
     toLeft: `<div class="toLeft clickable" onclick="moveLocation('left')"></div>`,
@@ -21,6 +22,11 @@ const clickables = {  //use ` (not ') for these because some divs have double qu
 
 //different locations
 const locations = {
+    map:{
+        mapVer: "",
+        previous: "home",
+    },
+
     home: {
         toLeft: 1,
         toRight: 1,
@@ -56,10 +62,14 @@ const locations = {
     },
 }
 
+
 //grab currently clickable elements 
 const clickableElements = document.querySelectorAll(".clickable");
 let currentLocation = "home";
 let previousLocation = "home";
+
+//get map
+let map = locations["map"];
 
 function moveLocation(newLocation){
     // previousLocation = currentLocation; //store last location for back button
@@ -74,7 +84,7 @@ function moveLocation(newLocation){
 
     container.innerHTML = locationHTML;
     container.style.backgroundImage = locationDivs["background"];
-
+    map.previous = currentLocation;
 
 
 }
@@ -96,20 +106,38 @@ function moveLocation(newLocation){
     
         container.innerHTML = locationHTML;
         container.style.backgroundImage = locationDivs["background"];
-    
+        map.previous = currentLocation;
     
     
     }
 
+var beforeMap = "";
+function toggleMap(mapVer) {
+    const locationDivs = locations[map.previous];
+    const locationHTML = Object.keys(locationDivs)
+    .filter((div) => locationDivs[div] === 1)
+    .map((div) => clickables[div])
+    .join("");
 
-let toggleMap = document.getElementById("toggleMap");
-toggleMap.onclick = function() {
-    const locationDivs = locations[currentLocation];
-    if(container.style.backgroundImage === locationDivs["background"]){
+    if(currentLocation !== "map"){
+        map.previous = currentLocation;
+        map.mapVer = currentLocation.mapVer;
+        currentLocation = "map"
+        container.innerHTML = "";
         container.style.backgroundImage = locationDivs["mapVer"];
     }else{
-        container.style.backgroundImage = locationDivs["background"];
+        currentLocation = map.previous;
+        container.innerHTML = locationHTML;
+        container.style.backgroundImage = locationDivs["background"]
     }
+    
+
+
+    // if(container.style.backgroundImage === locationDivs["background"]){
+    //     container.style.backgroundImage = locationDivs["mapVer"];
+    // }else{
+    //     container.style.backgroundImage = locationDivs["background"];
+    // }
 }
 
 
